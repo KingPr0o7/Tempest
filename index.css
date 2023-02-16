@@ -1,0 +1,104 @@
+/* All Across The Page */
+@import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Syloti+Nagri&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #000;
+}
+
+/* Navbar */
+#navbar[deactivated], #navbar[activated] {
+	padding: 25px;
+	color: white;
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	display: flex;
+	width: 100%;
+	position: fixed;
+	font-family: 'Karma', cursive;
+	align-items: center;
+	justify-content: space-between;
+	opacity: 0;
+	transition: all 400ms ease-in-out;
+}
+
+#navbar[activated] {
+	z-index: 2;
+	opacity: 1;
+}
+
+#navbar-links-left, #navbar-title, #navbar-links-right {
+	flex: 1;
+}
+
+#navbar-links-left, #navbar-links-right {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+#navbar-title {
+	text-align: center;
+}
+
+/* Content */
+
+#website-container {
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	overflow-y: scroll;
+}
+
+/* Landing Page */
+
+#background {
+	position: absolute;
+	z-index: -1;
+	height: 100vh;
+	background-attachment: fixed;
+	width: 100vw;
+	opacity: 70%;
+	object-fit: cover;
+}
+
+#landing-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100vw;
+}
+
+#landing-title {
+	font-size: 70px;
+	color: white;
+	font-family: 'Karma', cursive;
+}
+
+/* Overview */
+#overview-container {
+	height: 100vh;
+	width: 100vw;
+	padding: 25px;
+}
+
+#overview-title {
+	color: white;
+	text-align: center;
+	padding-bottom: 25px;
+	font-family: 'Noto Sans Syloti Nagri', sans-serif;
+	font-weight: bolder;
+	font-size: 40px;
+}
+
+#overview-desc {
+	color: white;
+	font-family: 'Noto Sans Syloti Nagri', sans-serif;
+}
