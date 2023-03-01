@@ -1,6 +1,9 @@
+/*                     */
 /* All Across The Page */
+/*                     */
+
 @import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Syloti+Nagri&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&display=swap');
 
 * {
 	box-sizing: border-box;
@@ -12,12 +15,21 @@ body {
 	background-color: #000;
 }
 
-/* Navbar */
+a {
+	color: white;
+	text-decoration: none;
+}
+
+/*                */
+/* Navigation Bar */
+/*                */
+
 #navbar[deactivated], #navbar[activated] {
 	padding: 25px;
 	color: white;
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
+	height: 75px;
 	display: flex;
 	width: 100%;
 	position: fixed;
@@ -43,13 +55,23 @@ body {
 	justify-content: space-evenly;
 }
 
+.navbar-link {
+	cursor: pointer;
+	border-radius: 8px;
+	padding: 5px;
+}
+
+.navbar-link:hover {
+	box-shadow: 0 0 0 1px white;
+}
+
 #navbar-title {
 	text-align: center;
 }
 
 /* Content */
 
-#website-container {
+#scroll-wrapper {
 	height: 100vh;
 	width: 100vw;
 	position: absolute;
@@ -64,11 +86,30 @@ body {
 	height: 100vh;
 	background-attachment: fixed;
 	width: 100vw;
-	opacity: 70%;
+	opacity: 100%;
 	object-fit: cover;
 }
 
-#landing-container {
+#background[fadeOut] {
+	animation: backgroundFadeOut 1s ease-in-out forwards;
+}
+
+
+#background[fadeIn] {
+	animation: backgroundFadeIn 1s ease-in-out forwards;
+}
+
+@keyframes backgroundFadeOut {
+	0% {opacity: 100%;}
+	100% {opacity: 30%;}
+}
+
+@keyframes backgroundFadeIn {
+	0% {opacity: 30%;}
+	100% {opacity: 100%;}
+}
+
+#landing {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -83,22 +124,62 @@ body {
 }
 
 /* Overview */
-#overview-container {
+#overview {
 	height: 100vh;
 	width: 100vw;
 	padding: 25px;
 }
 
-#overview-title {
+.title {
 	color: white;
 	text-align: center;
 	padding-bottom: 25px;
-	font-family: 'Noto Sans Syloti Nagri', sans-serif;
+	font-family: 'Noto Sans', sans-serif;
 	font-weight: bolder;
 	font-size: 40px;
 }
 
-#overview-desc {
+#overview-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	gap: 10px;
+}
+
+#overview-image {
+	height: 400px;
+	border-radius: 50%;
+	width: 400px;
+}
+
+.desc {
 	color: white;
-	font-family: 'Noto Sans Syloti Nagri', sans-serif;
+	font-size: 1.2rem;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+.title-wrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+#has-subtitle {
+	padding: 0;
+}
+
+.subtitle {
+	color: white;
+	text-align: center;
+	padding-bottom: 25px;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 300;
+	letter-spacing: 5px;
+	font-size: 20px;
+}
+
+#meaning {
+	padding: 25px;
+	text-align: center;
 }

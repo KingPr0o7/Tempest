@@ -1,16 +1,42 @@
-const titleBottom = document.getElementById('landing-title').getBoundingClientRect().bottom
-const content = document.getElementById('website-container')
+const titleBottom = document.getElementById('landing-title').getBoundingClientRect().bottom;
+const scroll_containment = document.getElementById('scroll-wrapper');
+const navbar = document.getElementById('navbar');
+const links = document.getElementsByClassName('navbar-link');
+const background = document.getElementById('background');
 
-content.addEventListener('scroll', () => {
-	const scrollPos = content.scrollTop
+scroll_containment.addEventListener('scroll', () => {
+	const scrollPos = scroll_containment.scrollTop
 	console.log(scrollPos, titleBottom)
 	if (scrollPos > titleBottom) {
-		document.getElementById('navbar').removeAttribute('deactivated', '');
-		document.getElementById('navbar').setAttribute('activated', '');
+		navbar.removeAttribute('deactivated', '');
+		navbar.setAttribute('activated', '');
+		background.removeAttribute('fadeIn', '');
+		background.setAttribute('fadeOut', '');
 	} else {
-		document.getElementById('navbar').removeAttribute('activated', '');
-		document.getElementById('navbar').setAttribute('deactivated', '');
+		navbar.removeAttribute('activated', '');
+		navbar.setAttribute('deactivated', '');
+		if (background.hasAttribute('fadeIn') || background.hasAttribute('fadeOut')) {
+			background.removeAttribute('fadeOut', '');
+			background.setAttribute('fadeIn', '');
+		}
 	}
 });
 
-console.log('CONNECTED')
+window.addEventListener('load', function() {
+	console.log('Hi')
+})
+
+// Smooth Anchor Scrolling
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(event) {
+        event.preventDefault();
+        var scrollTo = document.querySelector(this.getAttribute("href")).offsetTop;
+        if (anchor.toString().includes("landing")) {
+            scrollTo = document.body.offsetTop;
+            scroll_containment.scrollTo({top: scrollTo, behavior: 'smooth'});
+        } else {
+            scroll_containment.scrollTo({top: scrollTo-100, behavior: 'smooth'});
+        }
+    });
+});
