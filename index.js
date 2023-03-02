@@ -3,6 +3,9 @@ const scroll_containment = document.getElementById('scroll-wrapper');
 const navbar = document.getElementById('navbar');
 const links = document.getElementsByClassName('navbar-link');
 const background = document.getElementById('background');
+const titleFirst = document.getElementById('title-first');
+const titleSecond = document.getElementById('title-second');
+
 
 scroll_containment.addEventListener('scroll', () => {
 	const scrollPos = scroll_containment.scrollTop
@@ -23,7 +26,10 @@ scroll_containment.addEventListener('scroll', () => {
 });
 
 window.addEventListener('load', function() {
-	console.log('Hi')
+	titleFirst.setAttribute('activated', '');
+	setTimeout(function(){
+		titleSecond.setAttribute('activated', '')
+	}, 800)
 })
 
 // Smooth Anchor Scrolling
@@ -39,4 +45,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             scroll_containment.scrollTo({top: scrollTo-100, behavior: 'smooth'});
         }
     });
+});
+
+// Links
+document.getElementById("overview-link").addEventListener("click", function() {
+	window.open('https://www.shakespeare.org.uk/explore-shakespeare/shakespedia/shakespeares-plays/tempest/', '_blank');
 });

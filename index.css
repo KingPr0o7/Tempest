@@ -3,7 +3,7 @@
 /*                     */
 
 @import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600&display=swap');
 
 * {
 	box-sizing: border-box;
@@ -123,8 +123,21 @@ a {
 	font-family: 'Karma', cursive;
 }
 
+#title-first, #title-second {
+	opacity: 0;
+}
+
+#title-first[activated], #title-second[activated] {
+	animation: appear 2s ease-in-out forwards;
+}
+
+@keyframes appear {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
 /* Overview */
-#overview {
+.section {
 	height: 100vh;
 	width: 100vw;
 	padding: 25px;
@@ -183,3 +196,71 @@ a {
 	padding: 25px;
 	text-align: center;
 }
+
+#links-title {
+	padding: 0;
+}
+
+#link-disclaimer {
+	color: white;
+	text-align: center;
+	font-family: 'Noto Sans', sans-serif;
+	padding: 25px;
+}
+
+#red {
+	color: red;
+	font-weight: 600;
+}
+
+#links-wrapper {
+	display: flex;
+	justify-content: center;
+	padding: 0 30px 0 30px;
+}
+
+.link-name {
+	font-size: clamp(1rem, 2vw, 1.2rem);
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: bolder;
+	color: white;
+}
+
+.link-source {
+	font-size: clamp(0.6rem, 2vw, 0.8rem);
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: bolder;
+	color: gainsboro;	
+}
+
+.link {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px;
+	width: 50%;
+	border-radius: 8px;
+	background-color: #323232;
+}
+
+.link-images-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.link-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+.link-images {
+	width: 32px;
+	height: 32px;
+}
+
