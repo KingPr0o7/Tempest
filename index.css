@@ -33,7 +33,7 @@ a {
 	display: flex;
 	width: 100%;
 	position: fixed;
-	font-family: 'Karma', cursive;
+	font-family: 'Charm', cursive;
 	align-items: center;
 	justify-content: space-between;
 	opacity: 0;
@@ -73,7 +73,7 @@ a {
 
 #scroll-wrapper {
 	height: 100vh;
-	width: 100vw;
+	width: 100%;
 	position: absolute;
 	overflow-y: scroll;
 }
@@ -85,7 +85,7 @@ a {
 	z-index: -1;
 	height: 100vh;
 	background-attachment: fixed;
-	width: 100vw;
+	width: 100%;
 	opacity: 100%;
 	object-fit: cover;
 }
@@ -114,13 +114,14 @@ a {
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
-	width: 100vw;
+	width: 100%;
 }
 
 #landing-title {
-	font-size: 70px;
+	font-size: clamp(3rem, 7vw, 6rem);
+	font-weight: bolder;
 	color: white;
-	font-family: 'Karma', cursive;
+	font-family: 'Charm', cursive;
 }
 
 #title-first, #title-second {
@@ -139,7 +140,7 @@ a {
 /* Overview */
 .section {
 	height: 100vh;
-	width: 100vw;
+	width: 100%;
 	padding: 25px;
 }
 
@@ -149,7 +150,7 @@ a {
 	padding-bottom: 25px;
 	font-family: 'Noto Sans', sans-serif;
 	font-weight: bolder;
-	font-size: 40px;
+	font-size: clamp(3rem, 5vw, 5rem);
 }
 
 #overview-wrapper {
@@ -157,18 +158,19 @@ a {
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
-	gap: 10px;
+	gap: 25px;
 }
 
 #overview-image {
 	height: 400px;
-	border-radius: 50%;
 	width: 400px;
+	object-fit: initial;
+	border-radius: 50%;
 }
 
 .desc {
 	color: white;
-	font-size: 1.2rem;
+	font-size: clamp(1rem, 2vw, 2.2rem);
 	font-family: 'Noto Sans', sans-serif;
 }
 
@@ -189,7 +191,7 @@ a {
 	font-family: 'Noto Sans', sans-serif;
 	font-weight: 300;
 	letter-spacing: 5px;
-	font-size: 20px;
+	font-size: clamp(1rem, 4vw, 2rem);
 }
 
 #meaning {
