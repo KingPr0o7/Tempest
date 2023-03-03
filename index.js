@@ -51,3 +51,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.getElementById("overview-link").addEventListener("click", function() {
 	window.open('https://www.shakespeare.org.uk/explore-shakespeare/shakespedia/shakespeares-plays/tempest/', '_blank');
 });
+
+document.getElementById("theme-link").addEventListener("click", function() {
+	window.open('https://www.bellshakespeare.com.au/about-william-shakespeare', '_blank');
+});
