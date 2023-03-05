@@ -67,7 +67,7 @@ document.getElementById("play-link").addEventListener("click", function() {
 });
 
 document.getElementById("everything-link").addEventListener("click", function() {
-	window.open('https://www.bellshakespeare.com.au/the-tempest-everythings', '_blank');
+	window.open('https://www.bellshakespeare.com.au/play-resources/the-tempest', '_blank');
 });
 
 // Information of Link //
