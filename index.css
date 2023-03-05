@@ -153,7 +153,7 @@ a {
 	font-size: clamp(2.5rem, 5vw, 5rem);
 }
 
-#overview-wrapper {
+#overview-wrapper, #meaning-wrapper {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -162,9 +162,9 @@ a {
 	height: 100%;
 }
 
-#overview-image {
+.paragraph-image {
 	height: auto;  
-	max-width: 60%;
+	max-width: 40%;
 }
 
 .desc {
@@ -195,7 +195,6 @@ a {
 
 #meaning {
 	padding: 25px;
-	text-align: center;
 }
 
 #links-title {
@@ -214,7 +213,7 @@ a {
 	font-weight: 600;
 }
 
-#links-wrapper {
+#links-wrapper, #credits-wrapper {
 	display: flex;
 	gap: 10px;
 	align-items: center;
@@ -230,14 +229,14 @@ a {
 	color: white;
 }
 
-.link-source {
+.link-source, .link-used {
 	font-size: clamp(0.6rem, 2vw, 0.8rem);
 	font-family: 'Noto Sans', sans-serif;
 	font-weight: bolder;
 	color: gainsboro;	
 }
 
-.link {
+.link, .credit-link {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -246,6 +245,10 @@ a {
 	border-radius: 8px;
 	background-color: #323232;
 	opacity: 0;
+}
+
+.credit-link {
+	opacity: 1;
 }
 
 .link[appear] {
@@ -336,6 +339,10 @@ a {
 	height: 32px;
 }
 
+#modal-exit-image:hover {
+	cursor: pointer;
+}
+
 #modal-content {
 	display: flex;
 	flex-direction: column;
@@ -364,10 +371,33 @@ a {
 	font-size: clamp(0.8rem, 4vw, 1rem);	
 }
 
+.credit-favicon {
+	width: 48px;
+	height: 48px;
+}
+
+.credits-link-wrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	gap: 10px;
+}
+
+#audio-controls {
+    position: fixed;
+    top: 100%;
+    right: 0%;
+	width: 200px;
+	height: 100px;
+	background-color: wheat;
+}
 
 @media screen and (max-width: 950px) {
 	#overview-wrapper {
 		flex-direction: column;
+	}
+	#meaning-wrapper {
+		flex-direction: column-reverse;
 	}
 	.desc {
 		text-align: center;
@@ -375,7 +405,7 @@ a {
 	#overview-image {
 		max-width: 70%;
 	}
-	.link, #link-modal {
+	.link, #link-modal, .credit-link {
 		width: 100%;
 	}
 	.desc {
