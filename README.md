@@ -1,0 +1,1 @@
+<img align="center" src="images/graphics/cover.png" alt="Preview Screenshot">
