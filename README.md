@@ -12,7 +12,7 @@ This website was a final project for Q3 2023 school year. The goal was to encaps
 
 # Key Features
 - Onload & Onscroll animations
-- Links 'embeds'
+- Link 'embeds' *(I) icon*.
 - Mobile support
 - Music player
 
